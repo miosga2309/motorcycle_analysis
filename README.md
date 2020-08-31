@@ -13,4 +13,4 @@ This project is supposed to be an analysis of the current motorcycle market with
 ## Progress:
 29/08/2020: I have requested API keys for two car and motorcycle market places in the German area, [mobile](https://www.mobile.de/) and [autoscout24](https://www.autoscout24.de/).
 
-31/08/2020: Testing a probably less stable version of information access by scraping the webpage with certain results manually, using beautifulsoup in Python.
+31/08/2020: Testing a probably less stable version of information access by scraping the webpage with certain results manually, using beautifulsoup in Python. UPDATE: [mobile](https://www.mobile.de/) does not allow for that kind of scraping. It explicitly states that one has to use the API provided by them. Perhaps there are ways to bypass the defense mechanisms but let's wait for their reply on my API key request.
