@@ -11,4 +11,6 @@ This project is supposed to be an analysis of the current motorcycle market with
 - Yamaha XSR 700
 
 ## Progress:
-29/08/2020: I have requested API keys for two car and motorcycle market places in the German area, [mobile](https://www.mobile.de/) and [autoscout24](https://www.autoscout24.de/). 
+29/08/2020: I have requested API keys for two car and motorcycle market places in the German area, [mobile](https://www.mobile.de/) and [autoscout24](https://www.autoscout24.de/).
+
+31/08/2020: Testing a probably less stable version of information access by scraping the webpage with certain results manually, using beautifulsoup in Python.
