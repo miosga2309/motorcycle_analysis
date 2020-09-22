@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 path = "/Users/jonasmiosga/Desktop/motorcycle_analysis/mo_re_01092020.txt"
 
@@ -14,6 +15,12 @@ with open(path) as f:
 a = soup.find_all("div", class_="rbt-regMilPow")
 # find prices
 b = soup.find_all("span", class_="h3 u-block")
+
+# motorcycle model
+md = np.repeat("RE Interceptor 650", len(a), axis=0)
+
+# date the data was retrieved
+dt = np.repeat("01/09/2020", len(a), axis=0)
 
 # first registration
 ez = []
@@ -43,9 +50,15 @@ for i in range(0,len(b)):
     c = b[i].get_text()[0:5]
     price.append(int(c[0]+c[2:5]))
 
-df = pd.DataFrame({'ez': ez, 'price': price, 'km': km})
+df = pd.DataFrame({'ez': ez, 'price': price, 'km': km, 'date':dt, 'model':md})
 
 # ols
 X = np.column_stack([ez,km])
 reg = LinearRegression().fit(X, price)
 print(reg.score(X,price))
+
+# visualize
+plt.plot( 'price', 'km', data=df[df.km > 0], linestyle='none', marker='o')
+plt.show()
+#plt.savefig('scatter.png')
+print(df[df.km > 0])
